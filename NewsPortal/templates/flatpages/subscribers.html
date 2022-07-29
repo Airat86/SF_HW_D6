@@ -1,0 +1,20 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %} Подписка на категорию {% endblock title %}
+
+{% block content %}
+<h2>Выберите категорию:</h2>
+{% for category in categories %}
+<br>
+<form action ="subscribe/" method="POST">
+    {% csrf_token %}
+        {% if category.name in user_category %}
+        <h4>{{ category.name }} -
+            <button type="submit" name="id_cat" value="{{ category.id }}">Отписаться</button></h4>
+        {% else %}
+        <h4>{{ category.name }} -
+            <button type="submit" name="id_cat" value="{{ category.id }}">Подписаться</button></h4>
+        {% endif %}
+</form>
+{% endfor %}
+{% endblock content %}

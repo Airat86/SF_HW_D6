@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message for subscribers</title>
+</head>
+<body>
+    <h1>Здравствуй, {{ subscribe.username }}! Новая статья в твоём любимом разделе.</h1>
+    <p>Заголовок: {{ post.title  }} текст: {{ post.text|truncatechars:50 }} </p>
+    <p>Ссылка на новость: <a href=""class="btn btn-outline-success">читать</a><br> </p>
+</body>
+</html>
